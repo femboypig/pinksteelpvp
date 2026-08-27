@@ -1,0 +1,152 @@
+:root {
+  color-scheme: dark;
+  --pink: #f45b93;
+  --white: #f2f2f2;
+  --gray: #787878;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #000;
+  color: var(--white);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+main {
+  min-height: 100svh;
+  width: min(100% - 32px, 680px);
+  margin: 0 auto;
+  padding: 48px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.logo {
+  width: clamp(170px, 27vw, 230px);
+  height: clamp(170px, 27vw, 230px);
+  margin-bottom: 20px;
+  object-fit: contain;
+}
+
+h1 {
+  margin: 0;
+  color: var(--white);
+  font-size: clamp(34px, 7vw, 52px);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -.045em;
+}
+
+.description {
+  margin: 12px 0 36px;
+  color: #8a8a8a;
+  font-size: 14px;
+  letter-spacing: .01em;
+}
+
+.addresses {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.address {
+  margin: 0;
+  padding: 2px 0;
+  border: 0;
+  color: var(--pink);
+  background: none;
+  font: inherit;
+  font-size: clamp(21px, 5vw, 30px);
+  font-weight: 700;
+  letter-spacing: -.025em;
+  cursor: pointer;
+  transition: color .15s ease, opacity .15s ease;
+}
+
+.address:hover {
+  color: #ff8ab6;
+}
+
+.address:focus-visible,
+nav a:focus-visible {
+  outline: 1px solid var(--pink);
+  outline-offset: 5px;
+}
+
+.address-secondary {
+  margin-top: 8px;
+  color: #747474;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.address-secondary:hover {
+  color: #b6b6b6;
+}
+
+.address-secondary span {
+  color: #464646;
+}
+
+.copy-status {
+  min-height: 17px;
+  margin: 10px 0 30px;
+  color: #3f3f3f;
+  font-size: 10px;
+  transition: color .15s ease;
+}
+
+.copy-status.copied {
+  color: #747474;
+}
+
+nav {
+  display: flex;
+  gap: 22px;
+}
+
+nav a {
+  color: #8b8b8b;
+  font-size: 13px;
+  text-decoration: none;
+  transition: color .15s ease;
+}
+
+nav a:hover {
+  color: var(--white);
+}
+
+@media (max-width: 480px) {
+  main {
+    width: min(100% - 24px, 680px);
+    padding-block: 30px;
+  }
+
+  .logo {
+    margin-bottom: 15px;
+  }
+
+  .description {
+    margin-bottom: 30px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
